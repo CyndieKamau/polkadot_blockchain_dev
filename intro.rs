@@ -71,6 +71,12 @@ fn main() {
     //destructuring to 3 vars
     let (a, b, c) = mix(ret.0, ret.1, ret.2);
     println!("a = {}, b = {}, c = {}", a, b, c);
+    
+    //if/else
+    let mut no = if_else(20);
+    println!("{:?}", no);
+    no = if_else(50);
+    println!("{:?}", no);
 
 
 
@@ -101,3 +107,18 @@ fn mix(x:i32, y:f32, z:&str) -> (i32, f32, &str) {
     return (x, y, z);
 }
 
+
+//if/else function
+
+fn if_else(x:i32) {
+    if x < 45 {
+        println!("less than 45");
+    } 
+    else if x == 45 {
+        println!("is 45 ");
+    } 
+    else {
+        println!("Is greater than 45");
+    }
+
+}
