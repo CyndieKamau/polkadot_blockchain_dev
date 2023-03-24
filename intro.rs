@@ -38,6 +38,16 @@ fn main() {
     println!("{}", c);
 
     println!("The universe follows the {} mechanism.", PI);
+    
+    //arrays in [type;no] format
+    //index is usize (starts at 0)
+    let d: [u16;4] = [1,2,3,4];
+    println!("{:?}", d); 
+    println!("{}", d[1]);
+
+    //array slicing
+    let slice = &d[1..3];
+    println!("{:?}", slice);
 
 
 }
