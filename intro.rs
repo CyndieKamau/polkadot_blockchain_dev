@@ -48,6 +48,55 @@ fn main() {
     //array slicing
     let slice = &d[1..3];
     println!("{:?}", slice);
+    
+    //add function
+    println!("20 + 25 = {}", add(20, 25));
+
+    //subtract function
+    println!("50 - 13 = {}", subtract(50, 13));
+
+    //swap function return a tuple having 2 values
+    let val = swap(10, 15);
+    println!("{} {}", val.1, val.1);
+
+    //destructuring the tuple to 2 vars
+    let (var1, var2) = swap(val.1, val.0);
+    println!("var1 = {}, var2 = {}", var1, var2);
+
+    //mix fn returning tuple
+    let ret = mix(44, 5.79, "hey you");
+    println!("{} {} {}", ret.0, ret.1, ret.2);
+
+    //destructuring to 3 vars
+    let (a, b, c) = mix(ret.0, ret.1, ret.2);
+    println!("a = {}, b = {}, c = {}", a, b, c);
+
 
 
 }
+
+//addition
+fn add(x:i32, y:i32) -> i32 {
+    return x + y;
+
+}
+
+//subtraction
+fn subtract(x:i32, y:i32) -> i32 {
+    return x - y;
+}
+
+
+//multiple return values using tuples
+
+//function to swap i32 numbers
+fn swap(x:i32, y:i32) -> (i32, i32) {
+    return (y, x);
+
+}
+
+//function to return a tuple with int, float and str
+fn mix(x:i32, y:f32, z:&str) -> (i32, f32, &str) {
+    return (x, y, z);
+}
+
