@@ -57,7 +57,8 @@ fn main() {
 
     //swap function return a tuple having 2 values
     let val = swap(10, 15);
-    println!("{} {}", val.1, val.1);
+    println!("{} {}", val.1, val.1); // returns 10 10 (swap fn swaps indices)
+    println!("{} {}", val.0, val.1); // returns 15 10 
 
     //destructuring the tuple to 2 vars
     let (var1, var2) = swap(val.1, val.0);
