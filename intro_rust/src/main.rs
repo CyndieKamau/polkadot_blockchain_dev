@@ -1,3 +1,8 @@
+// This is my intro to Rust practice script
+// It's used as my Rust crash course, before building on polkadot blockchain
+// Cyndie, 2023.
+
+
 #![allow(unused)]
 
 use std::io;
@@ -77,6 +82,27 @@ fn main() {
     no = if_else(50);
     println!("{:?}", no);
 
+    
+    //while loop function
+    while_loop(50);
+
+
+    //for loop
+    for x in 0..5 {    //prints from 0 to 4
+        println!("{}", x);
+    }
+
+    for x in 0..=5 {
+        println!("{}", x);   //prints from 0 to 5
+    }
+
+
+    //matching function
+    match_no(0);    //prints "found zero"
+    match_no(2);    //prints "found one or two"
+    match_no(5);    //prints "found from three to nine"
+    match_no(67);   //prints "found 67 no between 10 and 100"
+    match_no(200);  //prints "not found! Shame "
 
 
 }
@@ -123,5 +149,42 @@ fn if_else(x:i32) {
 }
 
 
-//lemme see if it will commit
+// while loop
+fn while_loop(x:i32) {
+    let mut x = 0;
+    while x != 54 {
+        x += 1;
 
+    }
+    println!("x is {}", x);
+}
+
+
+//matching function
+
+fn match_no(num:i32)  {
+    match num {
+       0 => {
+        println!("Found Zero");
+       }
+
+       1 | 2 => {    //matching multiple values
+        println!("Found One or Two");
+       }
+
+       3..=9 => {   //matching range from 3 to 9
+        println!("Found from three to nine")
+       }
+
+       matched_no @ 10..=100 => {   //creating variable for a matched number
+        println!("Found {} number between 10 and 100", matched_no);
+       }
+
+       _ => {   //any other case
+        println!("Not found! Shame....")
+       }
+
+
+    }
+
+}
