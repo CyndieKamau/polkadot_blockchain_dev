@@ -104,6 +104,9 @@ fn main() {
     match_no(67);   //prints "found 67 no between 10 and 100"
     match_no(200);  //prints "not found! Shame "
 
+    //breaking loop function
+    break_loop();
+
 
 }
 
@@ -187,4 +190,17 @@ fn match_no(num:i32)  {
 
     }
 
+}
+
+// loop break function
+
+fn break_loop() {
+    let mut x = 0;
+    let v = loop {
+        x += 1;
+        if x == 20 {
+            break "Found the 20";
+        }
+    };
+    println!("{}", v);
 }
