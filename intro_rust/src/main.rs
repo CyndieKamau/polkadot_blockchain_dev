@@ -10,6 +10,7 @@ use std::io::{Write, BufRead, BufReader, ErrorKind};
 use std::fs::File;
 use std::cmp::Ordering;
 const PI:f32 = 3.14159;  //constant values, written in SCREAMING_CASE
+use std::collections::HashMap;
 
 // printing a statement
 
@@ -107,6 +108,8 @@ fn main() {
     //breaking loop function
     break_loop();
 
+    block_expr();
+
 
 }
 
@@ -203,4 +206,18 @@ fn break_loop() {
         }
     };
     println!("{}", v);
+}
+
+// Returning Values From Block Expressions
+
+fn block_expr() {
+    let mut x = 10;
+    // Traditional ternary operators write conditional expressions
+    //Rust use a ternary-like expression below
+    let y = if x < 10 {"Less than 10"} else {"more than 10"};
+    println!("Ternary Expression: {}", y);
+
+    x = 4;
+    let y = if x < 10 {"Less than 10"} else {"more than 10"};
+    println!("Ternary EXpression: {}", y);
 }
