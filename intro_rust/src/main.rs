@@ -110,6 +110,13 @@ fn main() {
 
     block_expr();
 
+    //calling methods
+    let s = String::from("My name is Cyndie");
+    println!("{} sentence has {} characters ", s, s.len());
+
+    //counting characters from string
+    count_char_str();
+
 
 }
 
@@ -220,4 +227,19 @@ fn block_expr() {
     x = 4;
     let y = if x < 10 {"Less than 10"} else {"more than 10"};
     println!("Ternary EXpression: {}", y);
+}
+
+//Counting no. of characters from a string
+
+fn count_char_str() {
+    // Read user input and assign to a String variable
+    let mut input_string = String::new();
+    println!("Enter a string:");
+    io::stdin().read_line(&mut input_string).expect("Failed to read line");
+
+    // Call the len method on the String variable to get the length
+    let string_length = input_string.trim().len();
+
+    // Return the length as an integer
+    println!("The string has {} characters", string_length);
 }
